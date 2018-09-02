@@ -1,0 +1,39 @@
+page-home {
+ 
+
+    .descAcao {
+        margin: 0 0 2px;
+        font-size: 1 rem;
+        font-weight: normal;
+        line-height: 1.5;
+        color: #222;
+    }
+    
+    .tituloAcao {
+        display: table;
+        font-size: 2rem;
+        line-height: 1.2;
+        color: #222;
+        padding: 8px 0;
+        text-align: center;
+    }
+
+    .dataAcao {
+        display: block;
+        font-size: 2rem;
+        line-height: 1.2;
+        color: #222;
+        margin: 10px 2px;
+        padding: 8px 0;
+    }
+
+    .numData {
+        padding: 6px;
+    }
+
+    ion-fab[bottom] {
+        bottom: 60px;
+    }
+    
+  
+}

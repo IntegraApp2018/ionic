@@ -1,0 +1,60 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>
+			Detalhe da Ação
+		</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<ion-card>
+		<img alt="logo" width="100%" src="assets/img/preview/advance-card-bttf.png">
+		<div class="card-title">10</div>
+		<div class="card-subtitle">SETEMBRO</div>
+	</ion-card>
+
+	<ion-card class="adv-map">
+		<ion-item>
+			<ion-row>
+				<h2>{{getCard.title}} - 10 SET</h2>
+			</ion-row>
+			<p>{{getCard.category.name}}</p>
+			<p>{{getCard.category.remaining}}</p>
+		</ion-item>
+		<ion-item>
+			<h5>
+				<ion-icon color="subtle" small item-start name='wine'></ion-icon>{{getCard.time.title}}
+			</h5>
+			<p>{{getCard.time.hours}}</p>
+
+			<h5>
+				<ion-icon color="subtle" small item-start name='wine'></ion-icon>Praça Itu - R. Felisberto Pereira</h5>
+			<p>Jardim Itu Sabará, Porto Alegre - RS</p>
+			<p>91380-440</p>
+
+			<h5>
+				<ion-icon color="subtle" small item-start name='wine'></ion-icon>Líder da ação</h5>
+			<p>{{getCard.leader.name}}</p>
+		</ion-item>
+
+		<ion-card>
+			<ion-card-content>
+				{{getCard.description}}
+			</ion-card-content>
+		</ion-card>
+
+		<div *ngIf="participante">
+			<ion-item-group>
+				<ion-item-divider color="light">Participantes</ion-item-divider>
+			</ion-item-group>
+
+			<ion-item>
+				<ion-avatar item-start *ngFor="let participante of getCard.participants">
+					<img src="assets/img/preview/avatar-luke.png">
+				</ion-avatar>
+			</ion-item>
+		</div>
+
+	</ion-card>
+
+</ion-content>

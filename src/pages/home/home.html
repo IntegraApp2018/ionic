@@ -1,0 +1,89 @@
+<ion-header>
+	<ion-navbar no-border-bottom>
+		<ion-title>
+			Integra
+		</ion-title>
+	</ion-navbar>
+
+	<ion-toolbar no-border-top>
+		<ion-segment [(ngModel)]="pet">
+			<ion-segment-button value="puppies">
+				Ideias
+			</ion-segment-button>
+			<ion-segment-button value="kittens">
+				Ações
+			</ion-segment-button>
+		</ion-segment>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content class="card-background-page">
+	<div [ngSwitch]="pet">
+		<!-- /Ideias -->
+		<ion-list *ngSwitchCase="'puppies'">
+			<ion-searchbar placeholder="Buscar Ideias" (ionInput)="getItems($event)"></ion-searchbar>
+			<ion-card *ngFor="let cardIdeia of cardIdeias" (click)="vaiDetalheIdeia(cardIdeia)">
+				<img src="assets/img/preview/nin-live.png" />
+
+				<ion-card-content>
+					<ion-card-title>
+						{{cardIdeia.title}}
+					</ion-card-title>
+					<p>
+						{{cardIdeia.description}}
+					</p>
+				</ion-card-content>
+
+				<ion-row no-padding>
+					<ion-col text-right>
+						<button ion-button clear small color="danger" icon-start >
+							<ion-icon name='share-alt'></ion-icon>
+							VER IDEIA
+						</button>
+					</ion-col>
+				</ion-row>
+			</ion-card>
+		</ion-list>
+		<!-- /Ideias -->
+
+		<!-- Ações -->
+		<ion-list *ngSwitchCase="'kittens'">
+			<ion-searchbar placeholder="Buscar Ações" (ionInput)="getItems($event)"></ion-searchbar>
+
+			<ion-card *ngFor="let cardAcao of cardAcoes" (click)="vaiDetalheAcao(cardAcao)">
+				<img src="assets/img/preview/badu-live.png" />
+
+				<ion-row>
+					<ion-col col-2>
+						<ion-card-title text-left class="dataAcao">
+							<span class="numData"> 10 </span> SET
+						</ion-card-title>
+					</ion-col>
+					<ion-col col-10>
+						<ion-card-title text-right class="tituloAcao">
+							{{cardAcao.title}}
+						</ion-card-title>
+						<p class="descAcao">
+							{{cardAcao.description}}
+						</p>
+					</ion-col>
+				</ion-row>
+			</ion-card>
+
+
+		
+		</ion-list>
+		<!-- /Ações -->
+	</div>
+	
+</ion-content>
+
+<div class="sobeFab" [ngSwitch]="pet">
+		<div *ngSwitchCase="'puppies'">
+			<ion-fab right bottom (click)="vaiCriarIdeia()">
+				<button ion-fab color="primary">
+					<ion-icon name="add"></ion-icon>
+				</button>
+			</ion-fab>
+		</div>
+	</div>
