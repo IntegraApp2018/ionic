@@ -1,0 +1,51 @@
+page-perfil {
+    .perfil{
+        margin-bottom: 0px;
+    }
+    .avatar{
+        float: left;
+        width: 30%;
+    }
+    .textos{
+        text-align: center;
+        position: relative;
+        top: 20px;
+    }
+    button{
+        color: #f53d3d;
+    }
+    .eulider{
+        padding-top: 0px;
+    }
+    ion-card {
+        position: relative;
+        text-align: center;
+        background: url(/assets/img/preview/advance-card-bttf.png) no-repeat;
+    }
+    .quadradoData {
+        border: 10px solid #fff;
+    }
+    .card-title {
+        position: absolute;
+        top: 35%;
+        font-size: 1.7em;
+        width: 100%;
+        font-weight: bold;
+        color: #fff;
+    }
+
+    .card-subtitle {
+        font-size: 1.0em;
+        position: absolute;
+        top: 74%;
+        width: 100%;
+        color: #fff;
+    }
+    .card-subtitle2 {
+        font-size: 1.0em;
+        position: absolute;
+        top: 60%;
+        width: 100%;
+        color: #fff;
+    }
+}

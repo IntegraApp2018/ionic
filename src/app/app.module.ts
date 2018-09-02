@@ -13,6 +13,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { IntegraProvider } from '../providers/integra/integra';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
+import { PerfilPage } from '../pages/perfil/perfil';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HttpModule } from '@angular/http';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    PerfilPage,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +36,8 @@ import { HttpModule } from '@angular/http';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    PerfilPage,
   ],
   providers: [
     StatusBar,
