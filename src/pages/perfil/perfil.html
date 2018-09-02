@@ -1,0 +1,49 @@
+<ion-content>
+  <ion-list class="perfil">
+    <ion-item>
+      <img src="assets/imgs/leticia_perfil.png" class="avatar">
+      <div class="textos">
+        <h1>Letícia Silveira</h1>
+        <p>
+          <ion-icon name="md-pin"></ion-icon> Jardim Itu Sabará</p>
+        <button class="danger">Editar perfil</button>
+      </div>
+    </ion-item>
+  </ion-list>
+  <ion-toolbar no-border-top class="eulider">
+    <ion-segment [(ngModel)]="pet">
+      <ion-segment-button value="puppies" class="euvou">
+        EU VOU
+      </ion-segment-button>
+      <ion-segment-button value="kittens">
+        SOU LIDER
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+  <div [ngSwitch]="pet">
+    <!-- /Ideias -->
+    <div [ngSwitch]="pet">
+      <!-- / EU VOU -->
+      <ion-list *ngSwitchCase="'puppies'">
+        <ion-card>
+          <img alt="logo" width="100%" src="http://i64.tinypic.com/2jct2e.png">
+          <div class="card-title">Pedalada solidária</div>
+          <div class="card-subtitle2">por Armando Silveira</div>
+        </ion-card>
+      </ion-list>
+      <!-- / EU VOU -->
+
+      <!-- SOU LIDER -->
+      <ion-list *ngSwitchCase="'kittens'">
+        <ion-list *ngSwitchCase="'kittens'">
+          <ion-card>
+            <img alt="logo" width="100%" src="assets/imgs/mask_ginasio.png">
+            <div class="card-title">Pintura do ginásio da escola</div>
+            <div class="card-subtitle">por Letícia Silveira</div>
+          </ion-card>
+        </ion-list>
+      </ion-list>
+      <!-- / SOU LIDER -->
+    </div>
+  </div>
+</ion-content>
