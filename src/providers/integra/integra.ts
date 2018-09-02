@@ -42,7 +42,34 @@ export class IntegraProvider {
 		return retornoCategories;
 	}
 
-	
+	sendIdea(tituloIdeia, dataIdeia, horaIdeia, descIdeia, categoriaIdea, nroPessoas, materialAjuda, enderecoIdea) { 	  
+		  var retornoPostIdeia = this._http.post(this.urlBase + 'cards', 
+										{ 
+											"title":tituloIdeia,
+											"description":descIdeia,
+											"category_id":categoriaIdea,
+											"people_interested":0,
+											'materialName':materialAjuda,
+											'materialquantity':1,
+											"people_needed":nroPessoas,
+											"time":'2012-01-26T13:51:50.417-07:00',
+											"location":enderecoIdea, 
+											"owner_id":3
+										}, 
+		                                {});
+		  return retornoPostIdeia;
+		}
+
+	confirmaUsuario(idCard){
+
+		
+		var retornoPostIdeia = this._http.post(this.urlBase + 'cards/'+ idCard +'/participants ', 
+										{ 
+											"user_id":3
+										}, 
+		                                {});
+		  return retornoPostIdeia;
+	}
 
 	buscaCardAcoes() {
 		var retornoCardAcoes = this._http.get(this.urlBase + 'actions',

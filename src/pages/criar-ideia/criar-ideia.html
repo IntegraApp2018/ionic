@@ -1,82 +1,92 @@
 <ion-header>
 
-	<ion-navbar>
-		<ion-title transparent>Criar Ideia</ion-title>
-	</ion-navbar>
+		<ion-navbar>
+			<ion-title transparent>Criar Ideia</ion-title>
+		</ion-navbar>
+	
+	</ion-header>
+	
+	
+	<ion-content>
+		<div class="imgDestaque">
+			<img alt="logo" style="margin:0 auto;" width="75%" src="assets/img/imgCriaIdeia.png">
+		</div>
+		<div class="formBox">
+			<ion-item>
+				<ion-label floating>Titulo Ideia</ion-label>
+				<ion-input type="text" [(ngModel)]="tituloIdeia" name="tituloIdeia"></ion-input>
+			</ion-item>
+	
+			<ion-item>
+				<ion-label floating>Data</ion-label>
+				<ion-datetime place displayFormat="DD/MM/YYYY" [(ngModel)]="dataIdeia"></ion-datetime>
+			</ion-item>
+	
+			<ion-item>
+				<ion-label>Hora</ion-label>
+				<ion-datetime displayFormat="HH:MM" [(ngModel)]="horaIdeia"></ion-datetime>
+			</ion-item>
+	
+			<ion-item>
+				<ion-label floating>Descrição da Ideia</ion-label>
+				<ion-textarea [(ngModel)]="descIdeia" name="descIdeia"></ion-textarea>
+			</ion-item>
 
-</ion-header>
-
-
-<ion-content>
-	<div class="imgDestaque">
-		<img alt="logo" style="margin:0 auto;" width="75%" src="assets/img/imgCriaIdeia.png">
-	</div>
-	<div class="formBox">
-		<ion-item>
-			<ion-label floating>Titulo Ideia</ion-label>
-			<ion-input type="text" name="tituloIdeia"></ion-input>
-		</ion-item>
-
-		<ion-item>
-			<ion-label floating>Data</ion-label>
-			<ion-datetime place displayFormat="DD/MM/YYYY" [(ngModel)]="dataIdeia"></ion-datetime>
-		</ion-item>
-
-		<ion-item>
-			<ion-label>Hora</ion-label>
-			<ion-datetime displayFormat="HH:MM" [(ngModel)]="horaIdeia"></ion-datetime>
-		</ion-item>
-
-		<ion-item>
-			<ion-label floating>Descrição da Ideia</ion-label>
-			<ion-textarea [(ngModel)]="descIdeia" name="descIdeia"></ion-textarea>
-		</ion-item>
-	</div>
-
-	<hr>
-
-	<div class="formBox">
-		<h4>Escolha uma categoria</h4>
-
-		<ion-item *ngFor="let categoria of listaCategorias">
-			<ion-label>{{categoria.name}}</ion-label>
-			<ion-checkbox value="" color="dark" checked="true"></ion-checkbox>
-		</ion-item>
-	</div>
-
-	<hr>
-
-	<div class="formBox">
-		<h4>Quantas pessoas esse evento precisa para acontecer?</h4>
-		<ion-item>
-			<ion-label floating>Número de Pessoas</ion-label>
-			<ion-input type="text" [(ngModel)]="nroPessoas" name="nroPessoas"></ion-input>
-		</ion-item>
-	</div>
-
-	<hr>
-
-	<div class="formBox">
-		<ion-row>
-			<ion-col col-7>
-				<h4>Você precisa de ajuda com materiais?</h4>
-			</ion-col>
-
-			<ion-col col-5 style="margin-top:25px;">
-				<ion-item>
-					<ion-label></ion-label>
-					<ion-toggle checked="false"></ion-toggle>
+			<ion-item>
+					<ion-label floating>Endereço da Ideia</ion-label>
+					<ion-textarea [(ngModel)]="enderecoIdeia" name="enderecoIdeia"></ion-textarea>
 				</ion-item>
-			</ion-col>
-		</ion-row>
-
-		<ion-item>
-			<ion-label floating>Item 1 (ex: tinta)</ion-label>
-			<ion-input [(ngModel)]="materialAjuda" type="text" name="materialAjuda"></ion-input>
-		</ion-item>
-		<p>Adicionar outro item</p>
-	</div>
-
-	<button (click)="enviaIdeia()" style="margin-top: 25px;" ion-button block>LANÇAR IDEIA</button>
-
-</ion-content>
+		</div>
+	
+		<hr>
+	
+		<div class="formBox">
+			<h4>Escolha uma categoria</h4>
+	
+			<ion-list radio-group [(ngModel)]="categoriaIdea">
+	
+				<ion-item *ngFor="let categoria of listaCategorias">
+					<ion-label>{{categoria.name}}</ion-label>
+					<ion-radio value="{{categoria.id}}"></ion-radio>
+				</ion-item>
+	
+	
+			</ion-list>
+		</div>
+	
+		<hr>
+	
+		<div class="formBox">
+			<h4>Quantas pessoas esse evento precisa para acontecer?</h4>
+			<ion-item>
+				<ion-label floating>Número de Pessoas</ion-label>
+				<ion-input type="text" [(ngModel)]="nroPessoas" name="nroPessoas"></ion-input>
+			</ion-item>
+		</div>
+	
+		<hr>
+	
+		<div class="formBox">
+			<ion-row>
+				<ion-col col-7>
+					<h4>Você precisa de ajuda com materiais?</h4>
+				</ion-col>
+	
+				<ion-col col-5 style="margin-top:25px;">
+					<ion-item>
+						<ion-label></ion-label>
+						<ion-toggle checked="false"></ion-toggle>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+	
+			<ion-item>
+				<ion-label floating>Item 1 (ex: tinta)</ion-label>
+				<ion-input [(ngModel)]="materialAjuda" type="text" name="materialAjuda"></ion-input>
+			</ion-item>
+			<p>Adicionar outro item</p>
+		</div>
+	
+		<button (click)="enviaIdeia()" style="margin-top: 25px;" ion-button block>LANÇAR IDEIA</button>
+	
+	</ion-content>

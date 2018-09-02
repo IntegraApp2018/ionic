@@ -29,7 +29,9 @@ export class IdeiaDetalhePage {
 	}
 
 	vaiPresencaConfirma() {
-		this.navCtrl.push('PresencaIdeiaPage');
+		this.navCtrl.push('PresencaIdeiaPage', {
+			idCard: this.getCard.id
+		});
 	}
 
 }

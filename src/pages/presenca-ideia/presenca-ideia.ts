@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IntegraProvider } from '../../providers/integra/integra';
 
 /**
  * Generated class for the PresencaIdeiaPage page.
@@ -10,20 +11,30 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-presenca-ideia',
-  templateUrl: 'presenca-ideia.html',
+	selector: 'page-presenca-ideia',
+	templateUrl: 'presenca-ideia.html',
 })
 export class PresencaIdeiaPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+	public idCard;
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad PresencaIdeiaPage');
-  }
+	constructor(public navCtrl: NavController, 
+		public serviceIntegra: IntegraProvider,
+		public navParams: NavParams) {
+		this.idCard = this.navParams.get('idCard');
+	}
 
-  vaiConfirmacaoPresenca(){
-    this.navCtrl.push('ConfirmacaoPage');
-  }
+	ionViewDidLoad() {
+		console.log('ionViewDidLoad PresencaIdeiaPage');
+	}
+
+	vaiConfirmacaoPresenca() {
+
+		this.serviceIntegra
+		.confirmaUsuario(this.idCard)
+		.subscribe()
+
+		this.navCtrl.push('ConfirmacaoPage');
+	}
 
 }
