@@ -22,4 +22,8 @@ export class PresencaIdeiaPage {
     console.log('ionViewDidLoad PresencaIdeiaPage');
   }
 
+  vaiConfirmacaoPresenca(){
+    this.navCtrl.push('ConfirmacaoPage');
+  }
+
 }
